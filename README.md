@@ -24,3 +24,4 @@ python main SUM tests/sum/input.csv aggregator grouping_1 grouping_2 --prune 2
 
 
 In `Tests` folder there are examples for files you can run for all aggregations."# AAOD_Spring25" 
+"# AAOD_Spring25" 
