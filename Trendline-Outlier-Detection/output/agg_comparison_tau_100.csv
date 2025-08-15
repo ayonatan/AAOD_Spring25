@@ -1,0 +1,17 @@
+age,Before,After
+25,<aggregations_mem.MaxAggregation object at 0x000001B9C1F421D0>,<aggregations_mem.MaxAggregation object at 0x000001B9C1F41C90>
+26,<aggregations_mem.MaxAggregation object at 0x000001B9C1F41E50>,<aggregations_mem.MaxAggregation object at 0x000001B9C1F403D0>
+27,<aggregations_mem.MaxAggregation object at 0x000001B9C1F423D0>,<aggregations_mem.MaxAggregation object at 0x000001B9C1F401D0>
+28,<aggregations_mem.MaxAggregation object at 0x000001B9C1F41FD0>,<aggregations_mem.MaxAggregation object at 0x000001B9C1F40250>
+29,<aggregations_mem.MaxAggregation object at 0x000001B9C1F42250>,<aggregations_mem.MaxAggregation object at 0x000001B9C1F41390>
+30,<aggregations_mem.MaxAggregation object at 0x000001B9C1F43490>,<aggregations_mem.MaxAggregation object at 0x000001B9C1F41690>
+31,<aggregations_mem.MaxAggregation object at 0x000001B9C1F42150>,<aggregations_mem.MaxAggregation object at 0x000001B9C1F41490>
+32,<aggregations_mem.MaxAggregation object at 0x000001B9C1F422D0>,<aggregations_mem.MaxAggregation object at 0x000001B9C1F41F10>
+33,<aggregations_mem.MaxAggregation object at 0x000001B9C1F43690>,<aggregations_mem.MaxAggregation object at 0x000001B9C1F42010>
+34,<aggregations_mem.MaxAggregation object at 0x000001B9C1F43890>,<aggregations_mem.MaxAggregation object at 0x000001B9C1F41290>
+35,<aggregations_mem.MaxAggregation object at 0x000001B9C1F42C10>,<aggregations_mem.MaxAggregation object at 0x000001B9C1F41D10>
+36,<aggregations_mem.MaxAggregation object at 0x000001B9C1F43E10>,<aggregations_mem.MaxAggregation object at 0x000001B9C1F41190>
+37,<aggregations_mem.MaxAggregation object at 0x000001B9C1F43590>,<aggregations_mem.MaxAggregation object at 0x000001B9C1F42110>
+38,<aggregations_mem.MaxAggregation object at 0x000001B9C1F40A50>,<aggregations_mem.MaxAggregation object at 0x000001B9C1F41E10>
+39,<aggregations_mem.MaxAggregation object at 0x000001B9C1F42450>,<aggregations_mem.MaxAggregation object at 0x000001B9C1F41C10>
+40,<aggregations_mem.MaxAggregation object at 0x000001B9C1F424D0>,<aggregations_mem.MaxAggregation object at 0x000001B9C1F41090>
