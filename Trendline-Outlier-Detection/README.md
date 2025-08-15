@@ -17,8 +17,22 @@ The program takes 4 or more arguments:
 2. A CSV input file path where you hold your data. The data types must be numbers for all your data, except your file's headers.
 3. The name of the attribute which you wish to aggregate.
 4. The name or names of the attributes you wish to group by. There can be more than one, but there must be at least one.
-5. An optional argument for pruning solution, this logic is only available for SUM and AVG. The command is then:
+5. An optional argument for pruning solution, this logic is only available for SUM and AVG. The 
+
+When running you need to choose between 2 options, in formal of all or nothing:
+1 - add norm , violation_vector , tau if you want to use one of the 4 non-classic algos.
+2 - dont add any of those flags to use the classic tau = 0 algo.
+
+norm can be "L1" or "Linf"
+violation_vector can be CVV/AVV
+tau is natural number
+
+commands for example:
 ```
+python main.py MAX "C:\...\may_june_july_transactions_processed_lean.csv" "price_int" "age" --output_folder output
+
+python main.py MAX "C:\...\may_june_july_transactions_processed_lean.csv" "price_int" "age" --output_folder output --tau 10 --violation_vector CVV --norm "L1"
+
 python main SUM tests/sum/input.csv aggregator grouping_1 grouping_2 --prune 2
 ```
 

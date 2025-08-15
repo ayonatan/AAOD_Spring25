@@ -6,7 +6,7 @@ from aggregations_mem import AggregationMem
 
 class OptimalSubset_Classic:
 
-    def update_H_with_pruning(F, H, group_id):
+    def update_H_with_pruning(self,F, H, group_id):
         """
         :param F: dictionary from agg value to count of remaining tuples (for group i)
         :param H: sorted dict of agg value (x) to: (count, [(agg_value, group_id)]) for groups 1..i-1, such that agg value of group i-1 = x)
@@ -27,7 +27,7 @@ class OptimalSubset_Classic:
         return H
 
 
-    def update_H_no_pruning(F, H, group_id):
+    def update_H_no_pruning(self,F, H, group_id):
         """
         :param F: dictionary from agg value to count of remaining tuples (for group i)
         :param H: sorted dict of agg value (x) to: (count, [(agg_value, group_id)]) for groups 1..i-1, such that agg value of group i-1 = x)
@@ -61,7 +61,7 @@ class OptimalSubset_Classic:
         return H
 
 
-    def prune_H(H, max_removed=None, sum_of_group_sizes=None):
+    def prune_H(self,H, max_removed=None, sum_of_group_sizes=None):
         """
         If x1<=x2 and H(x1)>=H(x2), keep only x1, and prune x2.
         :param H: sorted dict of agg value (x) to: (count, [(agg_value, group_id)]) for groups 1..i, such that agg value of group i = x)
@@ -79,7 +79,7 @@ class OptimalSubset_Classic:
         return SortedDict(newH)
 
 
-    def prune_H_by_max_removed(H, max_removed, sum_of_group_sizes=None):
+    def prune_H_by_max_removed(self,H, max_removed, sum_of_group_sizes=None):
         """
         If x1<=x2 and H(x1)>=H(x2), keep only x1, and prune x2.
         :param H: sorted dict of agg value (x) to: (count, [(agg_value, group_id)]) for groups 1..i, such that agg value of group i = x)
@@ -93,7 +93,7 @@ class OptimalSubset_Classic:
         return SortedDict(newH)
 
 
-    def get_optimal_subset_F_first(
+    def get_optimal_subset_F_first(self,
             df: pd.DataFrame,
             group_cols: Union[str, List[str]],
             agg_col: str,
@@ -142,10 +142,10 @@ class OptimalSubset_Classic:
             print(f"merging + pruning group: {group_key}")
             sum_of_group_sizes += group_sizes[group_key]
             if prune_h:
-                H = update_H_with_pruning(output[group_key], H, group_key)
-                H = prune_H(H, prune_dp_by_max_removed, sum_of_group_sizes) #TODO: there is a bug here when prune_dp_by_max_removed isn't None!
+                H = self.update_H_with_pruning(output[group_key], H, group_key)
+                H = self.prune_H(H, prune_dp_by_max_removed, sum_of_group_sizes) #TODO: there is a bug here when prune_dp_by_max_removed isn't None!
             else:
-                H = update_H_no_pruning(output[group_key], H, group_key)
+                H = self.update_H_no_pruning(output[group_key], H, group_key)
                 # x = df.groupby(group_cols)[agg_col].agg(sum_agg='sum', count_agg='count', mean_agg='mean', median_agg='median', max_agg='max')
                 # agg_value = x.loc[group_key, 'max_agg']  # or whatever metric you actually need
                 # print(f"Checking agg_value {agg_value} for group {group_key}")
@@ -156,7 +156,7 @@ class OptimalSubset_Classic:
                 #     print(f"No solution found in H for agg_value {agg_value}")
 
                 if prune_dp_by_max_removed is not None:
-                    H = prune_H_by_max_removed(H, prune_dp_by_max_removed, sum_of_group_sizes)
+                    H = self.prune_H_by_max_removed(H, prune_dp_by_max_removed, sum_of_group_sizes)
 
         ids_to_keep = []
         if prune_h:
